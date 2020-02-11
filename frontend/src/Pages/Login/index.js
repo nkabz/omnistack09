@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
 
-export default function Login({ history }) {
+export default function Login ({ history }) {
     const [email, setEmail] = useState('');
-
     async function handleSubmit (event) {
         event.preventDefault();
 
@@ -17,7 +16,11 @@ export default function Login({ history }) {
     return (
         <>
             <p>
-                Ofereça <strong>spots</strong> para programadores e encontre <strong>talentos</strong> para sua equipe!
+                Ofereça
+                <strong>spots</strong>
+                para programadores e encontre
+                <strong>talentos</strong>
+                para sua equipe!
             </p>
 
             <form onSubmit={handleSubmit}>
@@ -31,8 +34,8 @@ export default function Login({ history }) {
                 />
                 <button type="submit" className="btn">
                     Entrar
-                    </button>
+                </button>
             </form>
         </>
-    )
+    );
 }

@@ -1,24 +1,22 @@
 import React, { useState, useMemo } from 'react';
-import api from '../../services/api'
+import api from '../../services/api';
 
 import camera from '../../assets/camera.svg';
 import './Styles.css';
 
-export default function New({ history }) {
+export default function New ({ history }) {
     const [thumbnail, setThumbnail] = useState(null);
     const [company, setCompany] = useState('');
     const [techs, setTechs] = useState('');
     const [price, setPrice] = useState('');
 
-    const preview = useMemo ( () => {
-            return thumbnail ? URL.createObjectURL(thumbnail) : null;
-        }, [thumbnail]);
+    const preview = useMemo(() => thumbnail ? URL.createObjectURL(thumbnail) : null, [thumbnail]);
 
     async function handleSubmit (event) {
 
         event.preventDefault();
 
-        console.log('heiaya')
+        console.log('heiaya');
         const data = new FormData();
         const user_id = localStorage.getItem('user');
 
@@ -28,7 +26,7 @@ export default function New({ history }) {
         data.append('price', price);
 
         await api.post('/spots', data, {
-            headers: { user_id }
+            headers: { user_id },
         });
 
         history.push('/dashboard');
@@ -79,5 +77,5 @@ export default function New({ history }) {
                 Cadastrar
             </button>
         </form>
-    )
+    );
 }

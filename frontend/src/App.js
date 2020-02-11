@@ -3,15 +3,15 @@ import './App.css';
 
 import Routes from './routes';
 
-import logo from './assets/logo.svg'
+import logo from './assets/logo.svg';
 
-function App() {
+function App () {
 
     return (
         <div className="container">
-            <img src={logo} alt="aircnc "/>
+            <img src={logo} alt="aircnc" />
             <div className="content">
-                <Routes/>
+                <Routes />
             </div>
         </div>
     );
